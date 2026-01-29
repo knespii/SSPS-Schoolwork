@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            html {
+                interpolate-size: allow-keywords;
+            }
+        }
+
+        body {
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            background-color: rgb(6, 9, 47);
+            color: rgb(231, 249, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100dvh;
+            overflow: hidden;
+        }
+
+        img,
+        picture,
+        video,
+        canvas,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        input,
+        button,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            overflow-wrap: break-word;
+        }
+
+        p {
+            text-wrap: pretty;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-wrap: balance;
+        }
+
+        .calculator-container {
+            background-color: rgb(89, 92, 131);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .display {
+            background-color: rgb(51, 52, 86);
+            height: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 15px;
+            font-size: 24px;
+        }
+
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr 1.5fr 1.5fr;
+            gap: 20px;
+        }
+
+        button {
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+
+        .btn-dark {
+            background-color: rgb(6, 9, 47);
+            color: white;
+        }
+
+        .btn-light {
+            background-color: rgb(44, 47, 121);
+            color: white;
+        }
+
+        .btn-plus {
+            padding: 10px 20px;
+            grid-row: span 2;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-plus:hover {
+            transform: rotate(10deg);
+        }
+
+        .fall-down {
+            pointer-events: none;
+            animation: fall 1.5s forwards ease-in;
+        }
+
+        .explode {
+            pointer-events: none;
+            position: relative;
+            z-index: 10;
+            animation: explosion 1s forwards cubic-bezier(0.1, 0.8, 0.3, 1);
+        }
+
+        @keyframes explosion {
+            0% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        #final-number {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 150px;
+            font-weight: bold;
+            color: white;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 1.2s ease-in;
+            z-index: 100;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+        }
+
+        #final-number.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="calculator-container">
+        <output class="display">
+            120 + 78 - 20 / 2
+        </output>
+
+        <section class="buttons-grid">
+            <button type="button" class="btn-dark">M/EX</button>
+            <button type="button" class="btn-dark">M+</button>
+            <button type="button" class="btn-dark">M-</button>
+            <button type="button" class="btn-dark">MR</button>
+            <button type="button" class="btn-dark">MC</button>
+            <button type="button" class="btn-dark">GT</button>
+
+            <button type="button" class="btn-dark">AC</button>
+            <button type="button" class="btn-light">7</button>
+            <button type="button" class="btn-light">8</button>
+            <button type="button" class="btn-light">9</button>
+            <button type="button" class="btn-dark">%</button>
+            <button type="button" class="btn-dark">√</button>
+
+            <button type="button" class="btn-dark">±</button>
+            <button type="button" class="btn-light">4</button>
+            <button type="button" class="btn-light">5</button>
+            <button type="button" class="btn-light">6</button>
+            <button type="button" class="btn-dark">×</button>
+            <button type="button" class="btn-dark">÷</button>
+
+            <button type="button" class="btn-dark">➤</button>
+            <button type="button" class="btn-light">1</button>
+            <button type="button" class="btn-light">2</button>
+            <button type="button" class="btn-light">3</button>
+            <button type="button" class="btn-dark btn-plus">+</button>
+            <button type="button" class="btn-dark">-</button>
+
+            <button type="button" class="btn-dark">C</button>
+            <button type="button" class="btn-light">0</button>
+            <button type="button" class="btn-light">00</button>
+            <button type="button" class="btn-light">.</button>
+            <button type="button" class="btn-dark">=</button>
+        </section>
+    </main>
+    <div id="final-number">67</div>
+
+    <script>
+        const buttons = document.querySelectorAll('button');
+        const container = document.querySelector('.calculator-container');
+        const finalNumber = document.getElementById('final-number');
+
+        function explode() {
+            buttons.forEach((btn) => {
+                const x = (Math.random() - 0.5) * 1000;
+                const y = (Math.random() - 0.7) * 1000;
+                const r = (Math.random() - 0.5) * 1000;
+
+                btn.style.setProperty('--x', `${x}px`);
+                btn.style.setProperty('--y', `${y}px`);
+                btn.style.setProperty('--r', `${r}deg`);
+
+                btn.classList.add('explode');
+            });
+
+            container.style.transition = 'opacity 0.8s ease';
+            container.style.opacity = '0';
+            container.style.pointerEvents = 'none';
+
+            setTimeout(() => {
+                finalNumber.classList.add('show');
+            }, 600);
+        }
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', explode, { once: true });
+        });
+        //https://www.youtube.com/watch?v=lfmg-EJ8gm4
+        //code with mosh
+    </script>
+</body>
+
+</html>

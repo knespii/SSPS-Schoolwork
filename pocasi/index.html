@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="cs">
+<style>*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+/*https://api.ssps.cajthaml.eu/file/691883bc4a06658a8223b655*/
+.background {
+  background-image: url("");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.box {
+  background-color: rgba(240, 237, 237, 0.575);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  width: 570px;
+  padding: 3;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.main-info {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+.forecast-box {
+  width: 100%;
+  background-color: rgb(240, 237, 237);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 10px 0px;
+}
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+.day .name{
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size:0.9em ;
+}
+.day .temperature{
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-top: 5px;
+}
+.curent-temperature {
+  font-size: 4em;
+  font-weight: 400;
+  line-height: 1;
+}
+.city-details {
+ font-size: 2em;
+    font-weight: 500;
+  margin: 20px 0 10px 0;
+    width: 100%;
+  padding-bottom: 5px;
+    border-bottom: 2px;
+    margin-bottom:1px solid black;
+}
+.air-details {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: flex-end;
+}
+.air-details span {
+    font-size: 0.8em;
+    padding: 5px 10px;
+    background-color: orange;
+    color : white;
+    font-weight: 700;
+    line-height: 1;
+}
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="background">
+        <div class="box">
+            
+            <div class="main-info"> 
+                <div class="info">
+                    <div class="weather-icon"></div>
+                </div>
+            <div class="curent-temperature">67˚C</div>
+            </div>
+
+            <div class="city-details">
+                <h2 class="city-name">Praha</h2>
+                <div class ="air-details">
+                    <span>67%</span>
+                    <span>67km/h</span>
+                </div>
+            </div>
+            
+            <div class="forecast-box">
+             <div class="day">
+                    <span class="day-abbr">PON</span>
+                    <span class="forecast-temperature">67˚C</span>
+                </div>
+
+                <div class="day">
+                    <span class="day-abbr">ÚTE</span>
+                    <span class="forecast-temperature">67˚C</span>
+                </div>
+
+                <div class="day">
+                    <span class="day-abbr">STŘ</span>
+                    <span class="forecast-temperature">67˚C</span>
+                </div>
+
+                <div class="day">
+                    <span class="day-abbr">ČTV</span>
+                    <span class="forecast-temperature">67˚C</span>
+                </div>
+                
+                <div class="day">
+                    <span class="day-abbr">PÁ</span>
+                    <span class="forecast-temperature">67˚C</span>
+                </div>
+
+                <div class="day">
+                    <span class="day-abbr">SOB</span>
+                    <span class="forecast-temperature">67˚C</span>
+                </div>
+
+                <div class="day">
+                    <span class="day-abbr">NED</span>
+                    <span class="forecast-temperature">67˚C</span>
+                </div>   
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+
+
+<div class="background">
+    <div class="box">
+        
+        <div class="top-section-detail">
+            </div>
+
+        <div class="middle-section">
+            
+            <div class="left-column-details">
+                <div class="city-details">x;
+                    <h2 class="city-name">Praha</h2>
+                </div>
+                <div class ="air-details">
+                    <span>67%</span>
+                    <span>67km/h</span>
+                </div>
+            </div>
+            
+            <div class="curent-temperature">67˚C</div>
+            
+        </div>
+        
+        <div class="forecast-box">
+            <div class="day">
+                <span class="day-abbr">PON</span>
+                <span class="forecast-temperature">67˚C</span>
+            </div>
+
+            <div class="day">
+                <span class="day-abbr">ÚTE</span>
+                <span class="forecast-temperature">67˚C</span>
+            </div>
+
+            <div class="day">
+                <span class="day-abbr">STŘ</span>
+                <span class="forecast-temperature">67˚C</span>
+            </div>
+
+            <div class="day">
+                <span class="day-abbr">ČTV</span>
+                <span class="forecast-temperature">67˚C</span>
+            </div>
+                    
+            <div class="day">
+                <span class="day-abbr">PÁ</span>
+                <span class="forecast-temperature">67˚C</span>
+            </div>
+
+            <div class="day">
+                <span class="day-abbr">SOB</span>
+                <span class="forecast-temperature">67˚C</span>
+            </div>
+
+            <div class="day">
+                <span class="day-abbr">NED</span>
+                <span class="forecast-temperature">67˚C</span>
+            </div>   
+    
+        </div>
+        
+    </div>
+</div>

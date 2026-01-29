@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            html {
+                interpolate-size: allow-keywords;
+            }
+        }
+
+        body {
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            background-color: rgb(56, 91, 56);
+            font-family: 'Almendra', sans-serif;
+        }
+
+        img,
+        picture,
+        video,
+        canvas,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        input,
+        button,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            overflow-wrap: break-word;
+        }
+
+        p {
+            text-wrap: pretty;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-wrap: balance;
+        }
+
+
+        .main-box {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 2px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            outline: 3px lightgray solid;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        .header-illustration {
+            font-size: 3rem;
+            color: rgb(56, 91, 56);
+            margin: 0;
+        }
+
+        .header h1 {
+            font-size: 0;
+            text-align: center;
+            margin: 0;
+        }
+
+        .header h1 span {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .new-word {
+            margin-left: 0.3em;
+            ;
+        }
+
+        .header-separator hr {
+            border: none;
+            height: 10px;
+            background: repeating-linear-gradient(90deg,
+                    rgb(160, 44, 44),
+                    rgb(160, 44, 44), 25%,
+                    rgb(56, 91, 56) 25%,
+                    rgb(56, 91, 56) 50%);
+            margin: -20px 0 20px 0;
+        }
+
+        .separator hr {
+            border: none;
+            height: 10px;
+            background: repeating-linear-gradient(90deg,
+                    rgb(160, 44, 44),
+                    rgb(160, 44, 44)20%,
+                    rgb(56, 91, 56) 20%,
+                    rgb(56, 91, 56) 40%);
+            margin: 20px 0;
+        }
+
+        .separator-illustration {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 1.5rem;
+        }
+
+        .separator-illustration .red {
+            color: rgb(160, 44, 44);
+        }
+
+        .separator-illustration .green {
+            color: rgb(56, 91, 56);
+        }
+
+        .self-reflect-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 140px;
+            margin: 40px 0;
+        }
+
+        .self-reflect-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 90px;
+            color: white;
+            cursor: pointer;
+            background-color: rgb(56, 91, 56);
+        }
+
+        .sinner-box {
+            background-color: rgb(160, 44, 44);
+        }
+
+        .saint-box {
+            background-color: rgb(56, 91, 56);
+        }
+
+        .box-illustration {
+            font-size: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .self-reflect-box h2 {
+            font-size: 1rem;
+            margin: 0;
+            text-align: center;
+            padding-top: 5px;
+        }
+
+        .letter {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: rgb(33, 33, 33);
+            background-color: lightgrey;
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            font-size: 0.9rem;
+            padding: 10px;
+        }
+
+        .letter p {
+            margin-bottom: 10px;
+        }
+
+        .wish-list {
+            margin: 15px;
+            margin-left: -5px;
+            list-style-type: none;
+        }
+
+        .wish-list li::before {
+            content: "-";
+            font-weight: bold;
+        }
+
+        .letter-footer {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-box">
+        <div class="header">
+            <div class="header-illustration">
+                <i class="fa-solid fa-scroll"></i>
+            </div>
+            <h1>
+                <span style="color: rgb(160, 44, 44)">Na</span>
+                <span style="color: rgb(56, 91, 56);">pi</span>
+                <span style="color: rgb(160, 44, 44)">šte</span>
+                <span style="color: rgb(56, 91, 56);" class=" new-word">Je</span>
+                <span style="color: rgb(160, 44, 44)">žíš</span>
+                <span style="color: rgb(56, 91, 56);">ko</span>
+                <span style="color: rgb(160, 44, 44)">vi!</span>
+            </h1>
+            <div class="header-illustration">
+                <i class="fa-solid fa-scroll"></i>
+            </div>
+        </div>
+        <div class="header-separator">
+            <hr>
+        </div>
+
+        <section class="self-reflect-section">
+            <div class="self-reflect-box sinner-box">
+                <div class="box-illustration">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <h2>ZHŘEŠIL JSEM!</h2>
+            </div>
+
+            <div class="self-reflect-box saint-box">
+                <div class="box-illustration">
+                    <i class="fa-solid fa-gifts"></i>
+                </div>
+                <h2>BYL JSEM HODNÝ!</h2>
+            </div>
+        </section>
+
+        <div class="separator">
+            <hr>
+        </div>
+
+        <div class="separator-illustration">
+            <i class="fa-solid fa-candy-cane red"></i>
+            <i class="fa-solid fa-candy-cane green fa-rotate-180"></i>
+            <i class="fa-solid fa-candy-cane red"></i>
+            <i class="fa-solid fa-candy-cane green fa-rotate-180"></i>
+            <i class="fa-solid fa-candy-cane red"></i>
+            <i class="fa-solid fa-candy-cane green fa-rotate-180"></i>
+            <i class="fa-solid fa-candy-cane red"></i>
+            <i class="fa-solid fa-candy-cane green fa-rotate-180"></i>
+            <i class="fa-solid fa-candy-cane red"></i>
+        </div>
+
+        <div class="separator">
+            <hr>
+        </div>
+
+        <article class="letter">
+            <p>Milý Ježíšku,</p>
+
+            <p>
+                tento rok si pod vánoční stromeček přeju velmi mnoho věcí.
+                Myslím si že jsem byl hodný, podváděl jsem a vždy jsem pomohl...
+            </p>
+
+            <p>Letos si přeji:</p>
+
+            <ul class="wish-list">
+                <li>Pár bodů do WBA.</li>
+                <li>Nápovědu k tomuto úkolu.</li>
+                <li>Plyšáka Alzáka.</li>
+                <li>Oblek pana Ředitele.</li>
+                <li>Více času.</li>
+                <li>Wapiti a borůvky.</li>
+            </ul>
+
+            <p>Budu tě (a ty věci) čekat.</p>
+
+            <footer class="letter-footer">
+                <p>Moc děkuji<br>
+                    tvůj věrný fanda</p>
+                <p><strong>Ing. Matěj Cajthaml</strong></p>
+            </footer>
+
+        </article>
+
+    </div>
+</body>
+
+</html>
