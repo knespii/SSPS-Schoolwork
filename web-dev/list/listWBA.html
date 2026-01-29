@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nákupní seznam</title>
+    <style>
+        body {
+            font-family: Verdana;
+            background-color: #cce7ff;
+            margin: 0;
+        }
+
+        #nakupni-blok {
+            width: 300px;
+            margin: 100px auto;
+            background-color: #5a8ca0;
+            border-width: 3px;
+            border-style: solid;
+            border-color: #1e3d4f;
+            padding: 20px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+        }
+
+        #nakupni-blok h2 {
+            text-align: center;
+            border-width: 2px;
+            border-style: solid;
+            border-color: #1e3d4f;
+            background-color: #6fa8b2;
+            color: #0f262f;
+            padding: 10px;
+            margin-top: 0;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .seznam {
+            padding-left: 20px;
+        }
+
+        .seznam li {
+            background-color: #e68a7a;
+            color: white;
+            margin-bottom: 8px;
+            padding: 8px 10px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #b05040;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .seznam li:hover {
+            background-color: #a04030;
+            cursor: pointer;
+            border-color: #701000;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="nakupni-blok">
+        <h2>Nákupní seznam</h2>
+        
+        <ul class="seznam">
+            <li>Chleba</li>
+            <li>Sýr</li>
+            <li>Papriky</li>
+            <li>Rajčata</li>
+            <li>Tempeh</li>
+            <li>Mouka</li>
+        </ul>
+    </div>
+
+</body>
+</html>

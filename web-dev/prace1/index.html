@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.content-panel {
+background-color: #555151;
+color : white;
+  flex: 1;
+  padding: 100px 80px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+    align-items: center;
+}
+
+.separator {
+  width: 60px;
+  height: 6px;
+  background-color: #2b1b1b;
+  border: none;
+  margin: 40px 0;
+
+}
+
+.registration-section {
+  text-align: left;
+  padding: 20px;
+  font-size: 1.2em;
+}
+
+.image-panel {
+  background-color: #3f91ba;
+  height: 100vh;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+    
+.exploding-emoji {
+  font-size: 100px;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+registration-link {
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+   <div class="main-container">
+    <section class="content-panel">
+        <h1>Pozoruhodná - i strašidelná to stránka!</h1>
+        <section class="registration-section">
+          <hr class="separator">
+          <p>
+              Chcete se stát prestižním studentem? Klikněte 
+              <a href="#" class="registration-link">zde</a> 
+              pro automatické zaregistrování. Lze se kdykoliv odhlásit a odejít.
+          </p>
+        </section>
+    </section>
+    <div class="image-panel">
+        <span class="exploding-emoji">🤯</span>
+    </div>
+</div>
+    
+
+</body>
+</html>
