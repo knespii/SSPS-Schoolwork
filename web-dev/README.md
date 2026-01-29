@@ -1,1 +1,1 @@
-Note: CSS is embedded in the HTML file as per school requirements.
+Note: CSS is embedded in the HTML files as per school requirements.
